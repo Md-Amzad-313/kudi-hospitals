@@ -16,10 +16,10 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  const scrollToFooter = () => {
-    const footer = document.getElementById("footer");
-    if (footer) {
-      footer.scrollIntoView({ behavior: "smooth" });
+  const scrollToSecondPage = () => {
+    const secondPage = document.getElementById("what-we-offer");
+    if (secondPage) {
+      secondPage.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -60,12 +60,12 @@ const Home = () => {
               >
                 Book Appointment
               </a>
-              <a
-                href="tel:+919XXXXXXXXX"
+              <button
+                onClick={() => (window.location.href = "tel:+917073130165")}
                 className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200"
               >
                 Call Now
-              </a>
+              </button>
             </div>
           </motion.div>
         </div>
@@ -74,7 +74,7 @@ const Home = () => {
           className="absolute bottom-4 left-1/2 transform -translate-x-1/2 cursor-pointer"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1, repeat: Infinity }}
-          onClick={scrollToFooter}
+          onClick={scrollToSecondPage}
         >
           <svg
             className="w-8 h-8 text-white"
@@ -115,7 +115,7 @@ const Home = () => {
       </section>
 
       {/* What We Offer */}
-      <section className="py-16">
+      <section id="what-we-offer" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -238,7 +238,12 @@ const Home = () => {
       <section className="bg-red-600 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl font-bold mb-2">
-            Emergency? Call us now: +91 9XXXXXXXXX
+            <a
+              href="tel:+917073130165"
+              className="text-white hover:text-gray-200"
+            >
+              Emergency? Call us now: +91 7073130165
+            </a>
           </h3>
           <p className="text-lg">
             Available 24/7 for urgent medical assistance
