@@ -9,10 +9,12 @@ const ScrollToTop = () => {
       const heroHeight = window.innerHeight; // Approximate hero height
       const footer = document.getElementById("footer");
       const footerTop = footer ? footer.offsetTop : document.body.scrollHeight;
+      const footerHeight = footer ? footer.offsetHeight : 0;
+      const footerBottom = footerTop + footerHeight;
       const scrollY = window.scrollY + window.innerHeight; // Bottom of viewport
 
       // Show button if scrolled past hero and footer is not fully in view
-      setIsVisible(scrollY > heroHeight && scrollY < footerTop);
+      setIsVisible(scrollY > heroHeight && scrollY < footerBottom);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -33,7 +35,16 @@ const ScrollToTop = () => {
       transition={{ duration: 0.3 }}
       onClick={scrollToTop}
     >
-      <div className="bg-cyan-50 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hover:scale-110 transition-all duration-200">
+      <motion.div
+        className="bg-cyan-50 text-black p-3 rounded-full shadow-lg transition-all duration-200"
+        animate={{ opacity: isVisible ? [1, 0.5, 1] : 1 }}
+        transition={{ duration: 1, repeat: Infinity }}
+        whileHover={{
+          scale: 1.15,
+          backgroundColor: "#b2f5ea",
+          boxShadow: "0px 0px 20px rgba(0, 128, 128, 0.6)",
+        }}
+      >
         <svg
           className="w-6 h-6"
           fill="none"
@@ -47,7 +58,7 @@ const ScrollToTop = () => {
             d="M5 10l7-7m0 0l7 7m-7-7v18"
           />
         </svg>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
