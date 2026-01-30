@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Doctors from "./pages/Doctors";
@@ -32,6 +33,7 @@ function App() {
         </main>
         <Footer />
         <WhatsAppFloat />
+        <ScrollToTop />
       </div>
     </Router>
   );
