@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { PHONE_NUMBER } from "../config/contact";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="tel:+919XXXXXXXXX"
+              href={`tel:${PHONE_NUMBER}`}
               className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
             >
               Call Now
@@ -106,7 +107,7 @@ const Navbar = () => {
             </Link>
           ))}
           <a
-            href="tel:+919XXXXXXXXX"
+            href={`tel:${PHONE_NUMBER}`}
             className="bg-green-500 hover:bg-green-600 text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Call Now

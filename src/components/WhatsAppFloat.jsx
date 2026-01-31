@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { WHATSAPP_NUMBER } from "../config/contact";
 
 const WhatsAppFloat = () => {
   return (
@@ -7,7 +8,7 @@ const WhatsAppFloat = () => {
       animate={{ y: [0, 10, 0] }}
       transition={{ duration: 1, repeat: Infinity }}
       onClick={() =>
-        (window.location.href = `https://wa.me/917073130165?text=${encodeURIComponent("Hello, I would like to inquire about services at Kudi Hospital.")}`)
+        (window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I would like to inquire about services at Kudi Hospital.")}`)
       }
     >
       <div className="bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-colors duration-200">

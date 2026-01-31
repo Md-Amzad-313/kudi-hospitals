@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { PHONE_NUMBER } from "../config/contact";
 
 const Services = () => {
   const services = [
@@ -205,10 +206,10 @@ const Services = () => {
                 Book Appointment
               </a>
               <a
-                href="tel:+919XXXXXXXXX"
+                href={`tel:${PHONE_NUMBER}`}
                 className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
               >
-                Call Now: +91 9XXXXXXXXX
+                Call Now: {PHONE_NUMBER}
               </a>
             </div>
           </motion.div>

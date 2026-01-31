@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { PHONE_NUMBER } from "../config/contact";
 
 const Appointment = () => {
   const [formData, setFormData] = useState({
@@ -258,10 +259,10 @@ const Appointment = () => {
               immediately. Do not use this form for urgent cases.
             </p>
             <a
-              href="tel:+919XXXXXXXXX"
+              href={`tel:${PHONE_NUMBER}`}
               className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 inline-block"
             >
-              Emergency: +91 9XXXXXXXXX
+              Emergency: {PHONE_NUMBER}
             </a>
           </motion.div>
         </div>

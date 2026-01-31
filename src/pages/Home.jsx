@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import kudiImage1 from "../assets/kudiImage1.png";
 import kudiImage2 from "../assets/kudiImage2.png";
 import Reviews from "../components/Reviews";
+import { PHONE_NUMBER } from "../config/contact";
 
 const Home = () => {
   const images = [kudiImage1, kudiImage2];
@@ -62,7 +63,7 @@ const Home = () => {
                 Book Appointment
               </a>
               <button
-                onClick={() => (window.location.href = "tel:+917073130165")}
+                onClick={() => (window.location.href = `tel:${PHONE_NUMBER}`)}
                 className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200"
               >
                 Call Now
@@ -240,10 +241,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl font-bold mb-2">
             <a
-              href="tel:+917073130165"
+              href={`tel:${PHONE_NUMBER}`}
               className="text-white hover:text-gray-200"
             >
-              Emergency? Call us now: +91 7073130165
+              Emergency? Call us now: {PHONE_NUMBER}
             </a>
           </h3>
           <p className="text-lg">
